@@ -6,4 +6,4 @@ This project contains the data structures implementations, complexity analysis a
 # Complexity Analysis
  | Data Structure | Insertion | Search | Update | Remove | Main Usage |
  |-----------|-----------|--------|--------|--------|------------|
- |   Trie | O(n) |   O(n) |    -    |    O(n)   | Dictionary, Full text search, Autocomplete | 
+ |   Trie | O(W) |   O(W) |    -    |    O(W)   | Dictionary, Full text search, Autocomplete | 
