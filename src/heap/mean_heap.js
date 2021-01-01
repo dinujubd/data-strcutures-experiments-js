@@ -69,15 +69,6 @@ class MeanHeap {
         return res;
     }
 
-    sort = () => {
-        this.prepareHeap();
-        const n = this.heap.length;
-        for (let i = n-1; i > 0; i--) {
-            this.swap(0, i);
-            this.prepareHeap(i);
-        }
-    }
-
     prepareHeap = (n = this.heap.length) => {
         for (let i = n-1; i >= 0; i--)
             this.heapify(i, n);
