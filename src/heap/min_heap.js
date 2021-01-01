@@ -1,4 +1,4 @@
-class MeanHeap {
+class MinHeap {
     heap = []
     constructor(heap) {
         this.heap = heap;
@@ -77,4 +77,4 @@ class MeanHeap {
 
 }
 
-module.exports = MeanHeap
+module.exports = MinHeap

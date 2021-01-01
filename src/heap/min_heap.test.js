@@ -1,20 +1,20 @@
-const MeanHeap = require("./mean_heap");
+const MinHeap = require("./min_heap");
 
-describe("mean heap", () => {
+describe("min heap", () => {
     it("should initialize properly", () => {
-        const { Heap } = new MeanHeap([1, 2, 3]);
+        const { Heap } = new MinHeap([1, 2, 3]);
         expect(Heap).toStrictEqual([1, 2, 3])
     });
 
-    it("verify is mean heap", () => {
-        const h1 = new MeanHeap([7, 6, 5, 4, 3, 2, 1]);
-        const h2 = new MeanHeap([1, 2, 3, 4, 5, 6, 7]);
+    it("verify is min heap", () => {
+        const h1 = new MinHeap([7, 6, 5, 4, 3, 2, 1]);
+        const h2 = new MinHeap([1, 2, 3, 4, 5, 6, 7]);
         expect(h1.isHeap(0)).toBe(false);
         expect(h2.isHeap(0)).toBe(true);
     });
 
     it("heapify properly", () => {
-        const { Heap, heapify } = new MeanHeap([7, 6, 5, 4, 3, 2, 1]);
+        const { Heap, heapify } = new MinHeap([7, 6, 5, 4, 3, 2, 1]);
         heapify(Heap.length - 1, Heap.length);
         expect(Heap).toStrictEqual([7, 6, 5, 4, 3, 2, 1]);
         heapify(2, Heap.length);
@@ -26,20 +26,20 @@ describe("mean heap", () => {
     });
 
     it("prepare heap should heapify properly", () => {
-        const { Heap, prepareHeap } = new MeanHeap([7, 6, 5, 4, 3, 2, 1]);
+        const { Heap, prepareHeap } = new MinHeap([7, 6, 5, 4, 3, 2, 1]);
         prepareHeap();
         expect(Heap).toStrictEqual([1, 3, 2, 4, 6, 7, 5]);
     });
 
     it("sort should heapify properly", () => {
-        const { Heap, prepareHeap, peekTop } = new MeanHeap([7, 6, 5, 4, 3, 2, 1]);
+        const { Heap, prepareHeap, peekTop } = new MinHeap([7, 6, 5, 4, 3, 2, 1]);
         prepareHeap();
         const res = peekTop(7);
         expect(res).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     });
 
     it("add item should heapify properly", () => {
-        const { Heap, prepareHeap, add, sort } = new MeanHeap([7, 6, 5, 4, 3, 2]);
+        const { Heap, prepareHeap, add, sort } = new MinHeap([7, 6, 5, 4, 3, 2]);
         prepareHeap();
         add(1);
         expect(Heap).toStrictEqual([1, 3, 2, 4, 6, 7, 5]);
@@ -48,7 +48,7 @@ describe("mean heap", () => {
     });
 
     it("peek K element should return to k elements", () => {
-        const { Heap, prepareHeap, peekTop } = new MeanHeap([7, 6, 5, 4, 3, 2, 1]);
+        const { Heap, prepareHeap, peekTop } = new MinHeap([7, 6, 5, 4, 3, 2, 1]);
         prepareHeap();
         const tops = peekTop(3);
         expect(tops).toStrictEqual([1, 2, 3]);
